@@ -1,9 +1,10 @@
 {% extends "base.html" %}
- {% block title %} Articles {% endblock %}
+ {% block title %} HOME PAGE {% endblock %}
  {% block content %}
+   <p> List of articles in My Blog: </p>
    {% if latest_articles_list %}
      {% for a in latest_articles_list %}
-       <a href="{% url 'articles:detail' a.id %}">{{a.article_title}}</a>
+       <a href="{% url 'articles:detail' a.id %}"><p>{{a.article_title}}</p></a>
      {% endfor %}
 
    {% else %}

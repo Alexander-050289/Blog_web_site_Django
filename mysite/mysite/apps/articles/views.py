@@ -3,7 +3,6 @@ from .models import Article, Comment
 from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 
-
 def index(request):
     latest_articles_list = Article.objects.order_by('-pub_date')
     return render(request, 'articles/list.html', {'latest_articles_list': latest_articles_list})
